@@ -16,12 +16,7 @@ interface IFramework {
 
 export const getFrameworks = async () => {
 	const docFrameworks = await Framework.find();
-	console.log(docFrameworks);
-	const frameworks: IFramework[] = [];
-	docFrameworks.forEach(docFramework => {
-		frameworks.push({"title": "nnn", "description": "ddd"});
-	})
-	return frameworks;
+	return docFrameworks;
 }
 
 app.get('/', (req: express.Request, res: express.Response) => {
@@ -29,7 +24,7 @@ app.get('/', (req: express.Request, res: express.Response) => {
 });
 
 app.get('/frameworks', async (req: express.Request, res: express.Response) => {
-	res.send(await getFrameworks())
+	res.send(await getFrameworks());
 });
 
 app.listen(port, () => {

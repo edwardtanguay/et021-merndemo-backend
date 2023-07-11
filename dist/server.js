@@ -8,12 +8,7 @@ const app = express();
 const port = 4801;
 export const getFrameworks = async () => {
     const docFrameworks = await Framework.find();
-    console.log(docFrameworks);
-    const frameworks = [];
-    docFrameworks.forEach(docFramework => {
-        frameworks.push({ "title": "nnn", "description": "ddd" });
-    });
-    return frameworks;
+    return docFrameworks;
 };
 app.get('/', (req, res) => {
     res.send('backend');
