@@ -4,7 +4,7 @@ const port = 4801;
 app.get('/', (req, res) => {
     res.send('backend');
 });
-app.get('frameworks', (req, res) => {
+app.get('/frameworks', (req, res) => {
     res.send('this will be the framework array');
 });
 app.listen(port, () => {

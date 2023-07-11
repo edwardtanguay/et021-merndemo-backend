@@ -7,7 +7,7 @@ app.get('/', (req: express.Request, res: express.Response) => {
 	res.send('backend')
 });
 
-app.get('frameworks', (req: express.Request, res: express.Response) => {
+app.get('/frameworks', (req: express.Request, res: express.Response) => {
 	res.send('this will be the framework array')
 });
 
