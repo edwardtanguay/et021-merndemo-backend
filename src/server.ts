@@ -1,14 +1,35 @@
+import * as config from './config.js';
 import express from 'express';
+import mongoose from 'mongoose';
+import { Framework } from './models/Framework.js';
+
+mongoose.set('strictQuery', false);
+mongoose.connect(config.MONGODB_CONNECTION);
 
 const app = express();
 const port = 4801;
+
+interface IFramework {
+	title: string;
+	description: string;
+}
+
+export const getFrameworks = async () => {
+	const docFrameworks = await Framework.find();
+	console.log(docFrameworks);
+	const frameworks: IFramework[] = [];
+	docFrameworks.forEach(docFramework => {
+		frameworks.push({"title": "nnn", "description": "ddd"});
+	})
+	return frameworks;
+}
 
 app.get('/', (req: express.Request, res: express.Response) => {
 	res.send('backend')
 });
 
-app.get('/frameworks', (req: express.Request, res: express.Response) => {
-	res.send('this will be the framework array')
+app.get('/frameworks', async (req: express.Request, res: express.Response) => {
+	res.send(await getFrameworks())
 });
 
 app.listen(port, () => {

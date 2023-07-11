@@ -1,0 +1,1 @@
+{"version":3,"file":"Framework.js","sourceRoot":"","sources":["../../src/models/Framework.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,MAAM,UAAU,CAAC;AAEhC,MAAM,eAAe,GAAG,IAAI,QAAQ,CAAC,MAAM,CAAC;IAC3C,KAAK,EAAE,MAAM;IACb,WAAW,EAAE,MAAM;CACnB,CAAC,CAAC;AAEH,MAAM,CAAC,MAAM,SAAS,GAAG,QAAQ,CAAC,KAAK,CAAC,WAAW,EAAE,eAAe,CAAC,CAAC"}
