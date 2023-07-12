@@ -9,11 +9,6 @@ mongoose.connect(config.MONGODB_CONNECTION);
 const app = express();
 const port = 4801;
 
-interface IFramework {
-	title: string;
-	description: string;
-}
-
 export const getFrameworks = async () => {
 	const docFrameworks = await Framework.find();
 	return docFrameworks;
